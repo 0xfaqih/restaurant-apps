@@ -35,6 +35,7 @@ class HeroApp extends HTMLElement {
      text-align: center;
      background-image: url('../images/heros/hero.jpg');
      background-position: center;
+     background-size: cover;
      background-color: green;
    }
    
@@ -61,6 +62,18 @@ class HeroApp extends HTMLElement {
      font-size: 18px;
      font-weight: 300;
    }
+
+   @media screen and (max-width: 600px) {
+    .hero {
+      background-image: url('../images/heros/hero-small.jpg');
+    }
+  }
+
+  @media screen and (min-width: 601px) {
+    .hero {
+      background-image: url('../images/heros/hero-large.jpg');
+    }
+  }
      </style>
 
   <div class="hero">
