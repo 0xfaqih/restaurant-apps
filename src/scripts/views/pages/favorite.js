@@ -10,7 +10,7 @@ const Favorite = {
       <div class="content">
         <h2 class="content__heading" tabindex="0">Restoran Favorit Kamu</h2>
         <div id="restaurants" class="card__list">
- 
+      
         </div>
       </div>
       `;
@@ -19,10 +19,15 @@ const Favorite = {
   async afterRender() {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const restaurantsContainer = document.querySelector('#restaurants');
+    const headingElement = document.querySelector('.content__heading');
 
-    restaurants.forEach((restaurant) => {
-      restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-    });
+    if (restaurants.length === 0) {
+      headingElement.textContent = 'Tidak ada restoran dalam daftar favorit Anda';
+    } else {
+      restaurants.forEach((restaurant) => {
+        restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+      });
+    }
   },
 };
 

@@ -5,7 +5,7 @@ const createRestaurantItemTemplate = (restaurant) => `
           <h3 tabindex="0">${restaurant.city}</h3>
           <img crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" alt="gambar ${restaurant.name}">
           <p tabindex="0">Rating ⭐️${restaurant.rating}</p>
-          <h4 tabindex="0"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h4>
+          <h4 tabindex="0" class="restaurant-title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h4>
       </div>
 `;
 
@@ -22,7 +22,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
     <div class="restaurant-detail">
     <img crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" alt="">
     <div class="title">
-    <h2 tabindex="0" class="name">${restaurant.name}</h2>
+    <h2 tabindex="0" class="restaurant-title">${restaurant.name}</h2>
     </div>
     <div class="address">
     <h3 tabindex="0">${restaurant.city}</h3>
