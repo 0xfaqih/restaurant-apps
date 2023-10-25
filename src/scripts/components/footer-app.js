@@ -1,11 +1,11 @@
 class FooterApp extends HTMLElement {
-   connectedCallback() {
-     this.attachShadow({ mode: 'open' });
-     this.render();
-   }
- 
-   render() {
-     this.shadowRoot.innerHTML = `
+  connectedCallback() {
+    this.attachShadow({ mode: 'open' });
+    this.render();
+  }
+
+  render() {
+    this.shadowRoot.innerHTML = `
      <style>
     * {
     padding: 0;
@@ -49,8 +49,7 @@ class FooterApp extends HTMLElement {
       <p>Copyright &copy; 2023 - Kenyangin</p>
       </footer>
       `;
-   }
- }
- 
- customElements.define('footer-app', FooterApp);
- 
+  }
+}
+
+customElements.define('footer-app', FooterApp);
