@@ -58,6 +58,20 @@ module.exports = {
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: /https:\/\/restaurant-api.dicoding.dev/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'api-cache',
+            expiration: {
+              maxEntries: 100,
+              maxAgeSeconds: 72 * 60 * 60,
+            },
+            cacheableResponse: {statuses: [0, 200]},
+          },
+        },
+      ],
     }),
   ],
 };
