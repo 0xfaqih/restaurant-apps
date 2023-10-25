@@ -128,7 +128,7 @@ class RestaurantListCard extends HTMLElement {
       text-decoration: none;
       color: #1f1f29;
       display: inline-block;
-      min-height: 44px;
+      height: 44px;
       line-height: 44px;
     }
 

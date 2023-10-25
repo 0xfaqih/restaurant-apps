@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -29,6 +30,11 @@ module.exports = {
       },
     ],
   },
+
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()],
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
