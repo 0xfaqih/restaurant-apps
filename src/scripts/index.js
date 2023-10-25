@@ -4,7 +4,7 @@ import '../styles/responsive.css';
 import './components/header-app';
 import './components/hero-app';
 import './components/restaurant-list';
-import './components/footer-app'
+import './components/footer-app';
 import './components/loading';
 
 const skipLink = document.querySelector('.skip-link');
