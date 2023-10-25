@@ -30,13 +30,13 @@ class HeroApp extends HTMLElement {
    .hero {
      display: flex;
      align-items: center;
-     min-height: 380px;
-     width: 100%;
      text-align: center;
      background-image: url('../images/heros/hero.jpg');
      background-position: center;
      background-size: cover;
      background-color: green;
+     aspect-ratio: 16 / 9;
+     object-fit: cover;
    }
    
    .hero__inner {
@@ -44,7 +44,7 @@ class HeroApp extends HTMLElement {
      align-items: center;
      flex-direction: column;
      padding: 30px 20px;
-     min-width: 100%;
+     width: 100%;
      background-color: rgba(0, 0, 0, 0.541);
    }
    

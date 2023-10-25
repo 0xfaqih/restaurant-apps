@@ -1,1 +1,35 @@
-import API_ENDPOINT from"../../scripts/globals/api-endpoint";class RestaurantSource{static async listRestaurant(){const t=await fetch(API_ENDPOINT.LIST);return(await t.json()).restaurants}static async detailRestaurant(t){const a=await fetch(API_ENDPOINT.DETAIL(t));return(await a.json()).restaurant}static async addReview(t){try{const a=await fetch(API_ENDPOINT.ADD_REVIEW,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(t)});return await a.json()}catch(t){throw console.error("Error adding review:",t),t}}}export default RestaurantSource;
+import API_ENDPOINT from '../../scripts/globals/api-endpoint';
+
+class RestaurantSource {
+  static async listRestaurant() {
+    const response = await fetch(API_ENDPOINT.LIST);
+    const responseJson = await response.json();
+    return responseJson.restaurants;
+  }
+
+  static async detailRestaurant(id) {
+    const response = await fetch(API_ENDPOINT.DETAIL(id));
+    const responsejson = await response.json();
+    return responsejson.restaurant;
+  }
+
+  static async addReview(reviewData) {
+    try {
+      const response = await fetch(API_ENDPOINT.ADD_REVIEW, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reviewData),
+      });
+
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (error) {
+      console.error('Error adding review:', error);
+      throw error;
+    }
+  }
+}
+
+export default RestaurantSource;

@@ -1,7 +1,8 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../../public/data/restaurant-source';
 import { createFormReviewTemplate, createRestaurantDetailTemplate } from '../templates/template-creator';
-import FavoriteButtonInitator from '../../utils/favorite-button-initator';
+import FavoriteButtonInitator from '../../utils/favorite-button-presenter';
+import FavoriteRestaurantIdb from '../../../public/data/favorite-restaurant-idb';
 
 const Detail = {
   async render() {
@@ -26,6 +27,7 @@ const Detail = {
 
     FavoriteButtonInitator.init({
       favoriteButtonContainer: document.querySelector('#favoriteButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         city: restaurant.city,
